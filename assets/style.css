@@ -1,16 +1,15 @@
-/* --- Variáveis CSS Semânticas --- */
 :root {
   /* Cores da Marca */
-  --color-primary: #ffee10;       /* Cor principal (botões, destaques) */
-  --color-secondary: #333333;     /* Cor secundária */
+  --color-primary: #ffee10;     
+  --color-secondary: #333333;    
 
   /* Cores de Texto */
-  --text-color-primary: #333333;  /* Texto escuro padrão */
-  --text-color-inverted: #ffffff; /* Texto claro para fundos escuros */
+  --text-color-primary: #333333;  
+  --text-color-inverted: #ffffff; 
 
   /* Cores de Fundo */
-  --bg-color-main: #ffffff;       /* Fundo geral claro */
-  --bg-color-dark: #000000;       /* Fundo geral escuro (ex: laterais hero) */
+  --bg-color-main: #ffffff;       
+  --bg-color-dark: #000000;      
   --bg-overlay: rgba(0, 0, 0, 0.6);
 
   /* Tipografia */
@@ -20,7 +19,6 @@
   --grid-gap-main: 8px;
 }
 
-/* --- Reset Universal --- */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -29,15 +27,12 @@
 
 body {
   width: 100%;
-  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+  overflow-x: hidden;
   background-color: var(--bg-color-dark);
   color: var(--text-color-primary);
   font-family: var(--font-primary);
 }
 
-/* =========================================
-   SEÇÃO HERO (BANNER PRINCIPAL)
-   ========================================= */
 .parent.hero-section {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
@@ -54,13 +49,12 @@ body {
   background-position: center;
 }
 
-/* --- Elementos Internos do Hero --- */
 .hero-title {
   grid-column: 2 / 9;
   grid-row: 2 / 3;
   align-self: end;
   color: var(--text-color-inverted);
-  font-size: 3.5rem; /* Tamanho responsivo baseado na largura da tela */
+  font-size: 3.5rem; 
   line-height: 1.2;
   font-weight: bold;
 }
@@ -73,7 +67,7 @@ body {
   grid-column: 2 / 8;
   grid-row: 3 / 4;
   align-self: start;
-  margin-top: 1vh; /* Pequeno espaçamento superior responsivo */
+  margin-top: 1vh;
   color: var(--text-color-inverted);
   font-size: 1.6rem;
   line-height: 1.5;
@@ -88,9 +82,6 @@ body {
   gap: 15px;
 }
 
-/* =========================================
-   COMPONENTES (BOTÕES)
-   ========================================= */
 .btn {
   padding: 0.8vw 2vw; /* Padding responsivo */
   border: none;
@@ -98,22 +89,20 @@ body {
   
   font-size: 1vw;
   font-weight: bold;
-  text-wrap: nowrap; /* Evita quebra de linha no texto do botão */
+  text-wrap: nowrap; 
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* Botão Primário (Fundo Sólido) */
 .btn-primary {
   background-image: linear-gradient(125deg, var(--bg-color-main), var(--color-primary));
   color: var(--text-color-primary);
 }
 
 .btn-primary:hover {
-  filter: brightness(0.9); /* Escurece levemente ao passar o mouse */
+  filter: brightness(0.9);
 }
 
-/* Botão Secundário (Borda) */
 .btn-secondary {
   background-color: var(--bg-color-dark);
   border: 2px solid var(--color-primary);
@@ -123,34 +112,30 @@ body {
 
 /* --- SEÇÃO 2: PROBLEMAS --- */
 
-/* O container principal da seção segue o grid 9x12 que você definiu */
 .parent.section-problems {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    /* Usar auto para as linhas pode ser melhor que 1fr fixo aqui, 
-       para se adaptar ao conteúdo, mas vamos tentar seguir seu grid 12 linhas primeiro */
-    grid-template-rows: repeat(12, minmax(50px, auto)); /* minmax ajuda a não ficar muito pequeno */
+    grid-template-rows: repeat(12, minmax(50px, auto));
     gap: var(--grid-gap-main);
     
     width: 100%;
-    padding: 50px 20px; /* Padding superior/inferior maior para separar as seções */
-    background-color: var(--bg-color-dark); /* Fundo preto contínuo */
+    padding: 50px 20px;
+    background-color: var(--bg-color-dark);
 }
 
-/* O Card Principal (sua div2) */
 .problems-container {
-    grid-column: 2 / 9; /* span 7 começando na 2 (2 até 8 inclusé, então termina na linha 9) */
-    grid-row: 2 / 12;   /* span 10 começando na 2 (2 até 11 inclusé, termina na linha 12) */
-    background-color: #111; /* Um tom ligeiramente mais claro que o preto total para destacar */
-    border: 1px solid var(--color-primary); /* Borda amarela sutil */
+    grid-column: 2 / 9; 
+    grid-row: 2 / 12;  
+    background-color: #111;
+    border: 1px solid var(--color-primary); 
     border-radius: 10px;
     padding: 40px;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Espaço entre cabeçalho, grid de cards e rodapé */
+    gap: 30px; 
 }
 
-/* Estilos Internos do Container */
+
 .section-title {
     color: var(--text-color-inverted);
     font-size: 2.6rem;
@@ -163,22 +148,17 @@ body {
     text-align: justify;
 }
 
-/* Grid 2x2 para os Cards Menores */
 .problems-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
 .problem-card {
     background-color: var(--bg-color-dark);
-    
     background-image: 
-        /* Brilho no canto inferior direito (agora mais suave e diagonal) */
         radial-gradient(circle at 95% 95%, rgba(248, 194, 0, 0.2) 0%, transparent 60%),
-        /* Brilho no canto superior esquerdo (mantido como estava ou ajustado para mais leveza) */
         radial-gradient(circle at 5% 5%, rgba(248, 194, 0, 0.1) 0%, transparent 40%);
-    
     border: 1px solid rgba(248, 194, 0, 0.3);
     border-radius: 8px;
     padding: 25px;
@@ -187,18 +167,16 @@ body {
 
 
 .problem-card:hover {
-    transform: translateY(-5px); /* Efeito leve de "levantar" ao passar o mouse */
-
+    transform: translateY(-5px);
 }
 
 .icon-placeholder {
     width: 40px;
     height: 40px;
-    background-color: rgba(248, 194, 0, 0.2); /* Placeholder amarelo translúcido */
+    background-color: rgba(248, 194, 0, 0.2); 
     border: 1px solid var(--color-primary);
     border-radius: 50%;
     margin-bottom: 15px;
-    /* Quando você tiver os ícones, remova o background-color/border e use <img> dentro */
 }
 
 .card-title {
