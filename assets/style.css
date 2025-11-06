@@ -141,12 +141,10 @@ body {
 .problems-container {
     grid-column: 2 / 9; /* span 7 começando na 2 (2 até 8 inclusé, então termina na linha 9) */
     grid-row: 2 / 12;   /* span 10 começando na 2 (2 até 11 inclusé, termina na linha 12) */
-    
     background-color: #111; /* Um tom ligeiramente mais claro que o preto total para destacar */
-    border: 1px solid rgba(248, 194, 0, 0.3); /* Borda amarela sutil */
+    border: 1px solid var(--color-primary); /* Borda amarela sutil */
     border-radius: 10px;
     padding: 40px;
-    
     display: flex;
     flex-direction: column;
     gap: 30px; /* Espaço entre cabeçalho, grid de cards e rodapé */
@@ -155,13 +153,14 @@ body {
 /* Estilos Internos do Container */
 .section-title {
     color: var(--text-color-inverted);
-    font-size: 2rem;
+    font-size: 2.6rem;
     margin-bottom: 20px;
 }
 
 .section-description, .problems-footer p {
     color: #ccc; /* Cinza claro para textos secundários no escuro */
-    line-height: 1.6;
+    font-size: 1.89rem;
+    text-align: justify;
 }
 
 /* Grid 2x2 para os Cards Menores */
