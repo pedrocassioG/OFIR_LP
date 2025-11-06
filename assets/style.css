@@ -1,0 +1,121 @@
+/* --- Variáveis CSS Semânticas --- */
+:root {
+  /* Cores da Marca */
+  --color-primary: #ffee10;       /* Cor principal (botões, destaques) */
+  --color-secondary: #333333;     /* Cor secundária */
+
+  /* Cores de Texto */
+  --text-color-primary: #333333;  /* Texto escuro padrão */
+  --text-color-inverted: #ffffff; /* Texto claro para fundos escuros */
+
+  /* Cores de Fundo */
+  --bg-color-main: #ffffff;       /* Fundo geral claro */
+  --bg-color-dark: #000000;       /* Fundo geral escuro (ex: laterais hero) */
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+
+  /* Tipografia */
+  --font-primary: 'Montserrat', sans-serif;
+
+  /* Layout */
+  --grid-gap-main: 8px;
+}
+
+/* --- Reset Universal --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-primary);
+  font-family: var(--font-primary);
+}
+
+/* =========================================
+   SEÇÃO HERO (BANNER PRINCIPAL)
+   ========================================= */
+.parent.hero-section {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: var(--grid-gap-main);
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px; 
+  aspect-ratio: 1720 / 501;
+  background-color: var(--bg-color-dark);
+  background-image: url('img/section_1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* --- Elementos Internos do Hero --- */
+.hero-title {
+  grid-column: 2 / 9;
+  grid-row: 2 / 3;
+  align-self: end;
+  color: var(--text-color-inverted);
+  font-size: 3.5rem; /* Tamanho responsivo baseado na largura da tela */
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.highlight-text {
+    color: var(--color-primary);
+}
+
+.hero-description {
+  grid-column: 2 / 8;
+  grid-row: 3 / 4;
+  align-self: start;
+  margin-top: 1vh; /* Pequeno espaçamento superior responsivo */
+  color: var(--text-color-inverted);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  grid-column: 2 / 8;
+  grid-row: 4 / 5;
+  align-self: start;
+  
+  display: flex;
+  gap: 15px;
+}
+
+/* =========================================
+   COMPONENTES (BOTÕES)
+   ========================================= */
+.btn {
+  padding: 0.8vw 2vw; /* Padding responsivo */
+  border: none;
+  border-radius: 4px;
+  
+  font-size: 1vw;
+  font-weight: bold;
+  text-wrap: nowrap; /* Evita quebra de linha no texto do botão */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botão Primário (Fundo Sólido) */
+.btn-primary {
+  background-image: linear-gradient(125deg, var(--bg-color-main), var(--color-primary));
+  color: var(--text-color-primary);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.9); /* Escurece levemente ao passar o mouse */
+}
+
+/* Botão Secundário (Borda) */
+.btn-secondary {
+  background-color: var(--bg-color-dark);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
