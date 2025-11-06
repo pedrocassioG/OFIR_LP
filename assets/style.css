@@ -119,3 +119,97 @@ body {
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
 }
+
+
+/* --- SEÇÃO 2: PROBLEMAS --- */
+
+/* O container principal da seção segue o grid 9x12 que você definiu */
+.parent.section-problems {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    /* Usar auto para as linhas pode ser melhor que 1fr fixo aqui, 
+       para se adaptar ao conteúdo, mas vamos tentar seguir seu grid 12 linhas primeiro */
+    grid-template-rows: repeat(12, minmax(50px, auto)); /* minmax ajuda a não ficar muito pequeno */
+    gap: var(--grid-gap-main);
+    
+    width: 100%;
+    padding: 50px 20px; /* Padding superior/inferior maior para separar as seções */
+    background-color: var(--bg-color-dark); /* Fundo preto contínuo */
+}
+
+/* O Card Principal (sua div2) */
+.problems-container {
+    grid-column: 2 / 9; /* span 7 começando na 2 (2 até 8 inclusé, então termina na linha 9) */
+    grid-row: 2 / 12;   /* span 10 começando na 2 (2 até 11 inclusé, termina na linha 12) */
+    
+    background-color: #111; /* Um tom ligeiramente mais claro que o preto total para destacar */
+    border: 1px solid rgba(248, 194, 0, 0.3); /* Borda amarela sutil */
+    border-radius: 10px;
+    padding: 40px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaço entre cabeçalho, grid de cards e rodapé */
+}
+
+/* Estilos Internos do Container */
+.section-title {
+    color: var(--text-color-inverted);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.section-description, .problems-footer p {
+    color: #ccc; /* Cinza claro para textos secundários no escuro */
+    line-height: 1.6;
+}
+
+/* Grid 2x2 para os Cards Menores */
+.problems-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
+    gap: 20px;
+}
+
+.problem-card {
+    background-color: var(--bg-color-dark);
+    
+    background-image: 
+        /* Brilho no canto inferior direito (agora mais suave e diagonal) */
+        radial-gradient(circle at 95% 95%, rgba(248, 194, 0, 0.2) 0%, transparent 60%),
+        /* Brilho no canto superior esquerdo (mantido como estava ou ajustado para mais leveza) */
+        radial-gradient(circle at 5% 5%, rgba(248, 194, 0, 0.1) 0%, transparent 40%);
+    
+    border: 1px solid rgba(248, 194, 0, 0.3);
+    border-radius: 8px;
+    padding: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+
+.problem-card:hover {
+    transform: translateY(-5px); /* Efeito leve de "levantar" ao passar o mouse */
+
+}
+
+.icon-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(248, 194, 0, 0.2); /* Placeholder amarelo translúcido */
+    border: 1px solid var(--color-primary);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    /* Quando você tiver os ícones, remova o background-color/border e use <img> dentro */
+}
+
+.card-title {
+    color: var(--text-color-inverted);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card-description {
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
