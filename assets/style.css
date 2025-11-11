@@ -609,25 +609,19 @@ body {
 
 /* Rodapé "Transparência Total" */
 .journey-footer {
-    /* 5. GARANTE QUE O RODAPÉ TAMBÉM OCUPE A LARGURA
-          para ficar abaixo da timeline */
+
     width: 100%;
-    
-    /* O resto do seu código do footer */
-    max-width: 800px;
+
+    max-width: 1200px;
     margin-top: 40px; 
     padding: 25px;
     background-color: var(--bg-color-dark);
     border-radius: 8px;
     z-index: 2;
-    
-    /* Como o pai (.journey-container) já está a centrar
-       com align-items: center, não precisamos de margin: auto aqui */
 }
 .journey-footer p {
     color: #eee;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.4rem;
     margin: 0;
 }
 .journey-footer p strong {
