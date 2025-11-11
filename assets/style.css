@@ -343,10 +343,24 @@ body {
 
 .method-banner {
     grid-area: banner-metodo;
-    border: 2px dashed var(--color-primary); /* Amarelo, pois o banner é amarelo */
-    padding: 20px;
-    min-height: 80px;
-    color: #888;
+    border: none;
+    min-height: auto;
+    color: inherit;
+    background-image: linear-gradient(45deg, var(--bg-color-main), var(--color-primary) 40%);
+    border-radius: 15px;
+    justify-self: center;
+    width: 100%; 
+    max-width: 1200px;
+    padding: 15px 25px; /* Espaçamento interno */
+}
+
+/* Estilo do texto dentro do banner */
+.method-banner p {
+    color: var(--text-color-primary); /* Texto escuro */
+    font-weight: bold;
+    font-size: 2rem; /* Ajuste conforme necessário */
+    text-align: center;
+    margin: 0; /* Remove margem padrão do parágrafo */
 }
 
 .method-details {
