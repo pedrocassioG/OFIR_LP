@@ -272,7 +272,7 @@ body {
 .about-description {
     /* O texto padrão (não strong) fica cinza */
     color: #ccc;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-bottom: 15px; /* Espaço entre parágrafos */
     text-align: justify;
 }
@@ -310,12 +310,35 @@ body {
     font-weight: 600;
     /* Exemplo: font-size: 1.05rem; (Aqui você controla o tamanho do branco nos parágrafos) */
 }
+/* =========================================
+   SEÇÃO 3: Imagens (Logo e Selo)
+   ========================================= */
+
+/* Limpa o placeholder do .about-images */
 .about-images {
     grid-area: imagens-sobre;
-    border: 2px dashed #555;
-    padding: 20px;
-    min-height: 200px;
-    color: #888;
+    border: none;
+    min-height: auto;
+    color: inherit;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column; /* Coloca uma imagem em cima da outra */
+    align-items: center;    /* Centraliza as imagens horizontalmente */
+    justify-content: center; /* Centraliza as imagens verticalmente no espaço */
+    gap: 20px; /* Espaço entre as duas imagens */
+}
+
+.logo-gfs-card {
+    width: 100%;       /* <- Tente mudar para 60% (menor) ou 100% (maior) */
+    max-width: 500px; /* <- Tente mudar para 250px (limite menor) */
+    height: auto;     /* <- Deixe este como está */
+}
+
+.seal-8ps {
+    width: 100%;       /* <- Tente mudar para 50% (menor) */
+    max-width: 500px; /* <- Tente mudar para 200px */
+    height: auto;     /* <- Deixe este como está */
 }
 
 .method-banner {
