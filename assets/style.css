@@ -118,6 +118,7 @@ body {
     width: 100%;
     padding: 50px 20px;
     background-color: var(--bg-color-dark);
+    
 }
 
 .problems-container {
@@ -197,9 +198,9 @@ body {
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(20, auto);
     gap: var(--grid-gap-main);
-    
+    position: relative;
     width: 100%;
-    padding: 50px 20px;
+    padding: 50px 20px 0 20px;
     
     /* CORREÇÃO: Fundo preto, como nas seções anteriores */
     background-color: var(--bg-color-dark); 
@@ -242,14 +243,7 @@ body {
 
 }
 
-/* --- Áreas Reservadas (Placeholders) --- */
-/* Adicionamos estilos temporários para vermos os espaços */
 
-/* =========================================
-   SEÇÃO 3: O QUE É A GFS ACADEMY
-   ========================================= */
-
-/* Limpa o placeholder do .about-text */
 .about-text {
     grid-area: texto-sobre;
     /* Removemos os estilos de placeholder */
@@ -418,4 +412,70 @@ body {
     max-width: 450px; /* Ajuste este valor para controlar o tamanho máximo do gráfico */
     height: auto;
     margin: 0 auto;
+}.section-divider {
+    /* 1. O TRUQUE DO FUNDO DUPLO: */
+    /* Um degradê linear que vai de preto até preto 50%, 
+       e de amarelo 50% até amarelo 100% */
+    background: linear-gradient(
+        to bottom, /* De cima para baixo */
+        var(--bg-color-dark) 0%,   /* Começa preto */
+        var(--bg-color-dark) 50%,  /* Preto sólido até a metade */
+        var(--color-primary) 50%,  /* Amarelo começa exatamente na metade */
+        var(--color-primary) 100%  /* Amarelo sólido até o fim */
+    );
+    
+    /* 2. Centraliza o botão verticalmente */
+    display: flex;
+    align-items: center; 
+    
+    /* 3. Define a altura da seção (altura da sua imagem do botão) */
+    /* Se a sua imagem do botão tiver 60px de altura, use 60px aqui */
+    height: 60px; /* <<-- AJUSTE ISTO para a altura da sua imagem PNG */
+    
+    /* 4. Remove qualquer padding indesejado */
+    padding: 0;
+    
+    /* 5. Garante que o conteúdo (botão) fique por cima */
+    position: relative;
+    z-index: 5;
+}
+
+/* Wrapper para centralizar o botão horizontalmente */
+.divider-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* A imagem do botão */
+.divider-button-wrapper img {
+    display: block;
+    width: 80px; /* <<-- AJUSTE ISTO para a largura da sua imagem PNG */
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)); /* Sombra */
+}
+.parent.section-journey {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(18, auto);
+    gap: var(--grid-gap-main);
+    
+    width: 100%;
+    padding: 0 20px 50px 20px;
+    
+    /* Fundo amarelo para a seção */
+    background-color: var(--color-primary); 
+}
+
+/* O Contêiner de Conteúdo (16x7) - AGORA TRANSPARENTE */
+.journey-container {
+
+    grid-column: 2 / 9;
+    grid-row: 1 / 18;
+    display: grid;
+    border: 2px dashed var(--text-color-primary); /* Borda tracejada escura */
+    min-height: 800px;
+    
+    /* O texto aqui dentro agora deve ser escuro para contrastar com o amarelo */
+    color: var(--text-color-primary); 
 }
