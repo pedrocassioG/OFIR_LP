@@ -728,3 +728,125 @@ body {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
+/* =========================================
+   SEÇÃO 6: RESULTADOS REAIS
+   ========================================= */
+
+.parent.section-results {
+    display: grid;
+    /* 9 Colunas */
+    grid-template-columns: repeat(9, 1fr);
+    /* 20 Linhas */
+    grid-template-rows: repeat(20, auto);
+    gap: var(--grid-gap-main);
+    
+    width: 100%;
+    /* Espaçamento para separar da seção anterior e da próxima */
+    padding: 80px 20px; 
+    
+    background-color: var(--bg-color-dark); 
+}
+
+.results-container {
+    /* Posição */
+    grid-column: 2 / 9;
+    grid-row: 1 / 21; 
+
+    /* Limpa placeholders */
+    border: none;
+    min-height: auto;
+    
+    /* Novo Layout: Empilha (título, grid, depoimento) e centraliza */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center;
+    gap: 60px; /* Espaço generoso entre os 3 blocos */
+    
+    color: var(--text-color-inverted); /* Texto padrão claro */
+}
+
+/* Título Principal */
+.results-main-title {
+    color: var(--text-color-inverted);
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* O Grid 2x2 para os Stats */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 40px; /* 50px vertical, 40px horizontal */
+    width: 100%;
+}
+
+/* Card individual do Stat */
+.stat-card {
+    text-align: center; /* Centraliza todo o conteúdo (círculo, título, p) */
+}
+
+/* O "Donut" Amarelo */
+.stat-circle {
+    /* Tamanho do círculo */
+    width: 180px;  
+    height: 180px; 
+    margin: 0 auto 25px auto; /* Centraliza o círculo e dá espaço abaixo */
+    
+    /* Efeito Donut */
+    border: 15px solid var(--color-primary); /* A borda amarela grossa */
+    border-radius: 50%; /* Transforma o quadrado em círculo */
+    
+    /* Centraliza o número dentro do círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Estilo do Texto (Número) */
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--text-color-inverted);
+}
+
+.stat-title {
+    color: var(--color-primary); /* Título do stat em amarelo */
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.stat-description {
+    color: #ccc; /* Descrição em cinza claro */
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+/* O Depoimento no final */
+.results-testimonial {
+    width: 100%;
+    max-width: 800px; /* Limita a largura para leitura */
+    padding: 25px;
+    background-color: #1a1a1a; /* Fundo cinza escuro */
+    border-left: 5px solid var(--color-primary); /* Linha amarela à esquerda */
+    border-radius: 0 8px 8px 0;
+}
+
+.results-testimonial blockquote {
+    color: #eee;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-style: italic;
+    margin: 0;
+}
+
+.results-testimonial cite {
+    display: block;
+    margin-top: 15px;
+    color: var(--color-primary);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+}
