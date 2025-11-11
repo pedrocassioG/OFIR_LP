@@ -628,3 +628,103 @@ body {
     color: var(--text-color-inverted);
     font-weight: bold;
 }
+
+/* =========================================
+   SEÇÃO 5: PILARES DE SERVIÇO
+   ========================================= */
+.parent.section-pillars {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(17, auto);
+    gap: var(--grid-gap-main);
+    width: 100%;
+    padding: 80px 20px;
+    background-color: var(--bg-color-dark);
+}
+
+/* O Contêiner de Conteúdo (15x7) - O Grid 2x2 */
+.pillars-container {
+    grid-column: 3 / 8;
+    grid-row: 2 / 17;
+    border: none;
+    min-height: auto;
+    color: inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+    gap: 30px; /* Espaço entre os cards */
+}
+
+/* Estilo de cada Card (Atualizado) */
+.pillar-card {
+    background-color: #1a1a1a; /* Fundo preto/cinza escuro do card */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Força o header a respeitar o border-radius */
+}
+
+/* NOVO: Estilo do Header Amarelo */
+.pillar-header {
+    background-color: var(--color-primary);
+    padding: 12px 12px; 
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+}
+
+.pillar-icon {
+    width: 30px; /* Aumentei um pouco, parece maior na sua foto. Ajuste conforme necessário. */
+    height: 30px;
+    display: block;
+    flex-shrink: 0; /* Garante que o ícone não encolha */
+}
+
+/* NOVO: Estilo do Wrapper de Conteúdo (Preto) */
+.pillar-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz esta área crescer para preencher o card */
+}
+
+/* Títulos dos Cards */
+.pillar-card h3 {
+    color: var(--text-color-inverted);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    padding: 0 0 0 20px;
+}
+
+/* Parágrafos dos Cards */
+.pillar-card p {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    padding: 0 0 0 20px;
+}
+
+/* Lista de Benefícios (com bullets customizados) */
+.pillar-list {
+    list-style-type: none; /* Remove o bullet padrão */
+    padding-left: 0;
+    margin-top: auto; /* Empurra a lista para o final do card */
+}
+
+.pillar-list li {
+    color: #ccc;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 20px; /* Espaço para o "bullet" customizado */
+    margin-bottom: 10px;
+}
+
+/* O "bullet" amarelo customizado */
+.pillar-list li::before {
+    content: '•';
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
