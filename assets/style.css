@@ -469,13 +469,22 @@ body {
     /* Posição no grid (continua igual) */
     grid-column: 2 / 9;
     grid-row: 1 / 18;
+
+    /* REMOVEMOS os estilos de placeholder */
     border: none;
     min-height: auto;
     color: var(--text-color-primary);
+
+    /* --- CORREÇÃO PRINCIPAL --- */
+    /* 1. Força o layout a ser de cima para baixo */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza todo o conteúdo horizontalmente */
-    gap: 40px; /* Espaço entre o cabeçalho e a timeline (que virá) */
+    
+    /* 2. Centraliza todos os blocos no meio */
+    align-items: center; 
+    
+    /* 3. Espaço entre os blocos (header, timeline, footer) */
+    gap: 40px; 
 }
 
 /* Estilos para o bloco de cabeçalho (título e parágrafo) */
@@ -497,4 +506,119 @@ body {
 
     color: var(--color-secondary); 
     line-height: 1.6;
+}
+
+.journey-timeline {
+    /* 4. GARANTE QUE A TIMELINE OCUPE A LARGURA 
+          para não flutuar ao lado de outros elementos */
+    width: 100%;
+    
+    /* O resto do seu código da timeline */
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 30px 40px;
+    position: relative; /* Essencial para a linha central */
+}
+
+/* A Linha Vertical Central (usando pseudo-elemento) */
+.journey-timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--text-color-primary); /* Linha preta */
+    
+    /* Posição da linha */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza a linha perfeitamente */
+    z-index: 1; /* Fica atrás dos números */
+}
+
+/* Bloco de conteúdo (texto) */
+.phase-content {
+    position: relative; /* Garante que o texto fique na frente da linha */
+    z-index: 2;
+}
+
+/* Alinhamento do texto */
+.phase-left {
+    text-align: right; /* Texto da esquerda alinha à direita */
+    grid-column: 1 / 2;
+}
+.phase-right {
+    text-align: left; /* Texto da direita alinha à esquerda */
+    grid-column: 3 / 4;
+}
+
+.phase-content h3 {
+    font-size: 1.5rem;
+    color: var(--text-color-primary);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.phase-content p {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.phase-content .phase-meta {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-color-primary);
+}
+
+/* Caixa do Número (Coluna Central) */
+.phase-number-box {
+    grid-column: 2 / 3; /* Sempre na coluna central */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Garante que fique na frente da linha */
+    z-index: 3; /* Na frente de TUDO */
+}
+
+.phase-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-color-primary); /* Fundo preto */
+    color: var(--color-primary); /* Número amarelo */
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    
+    /* Centraliza o número dentro da caixa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Rodapé "Transparência Total" */
+.journey-footer {
+    /* 5. GARANTE QUE O RODAPÉ TAMBÉM OCUPE A LARGURA
+          para ficar abaixo da timeline */
+    width: 100%;
+    
+    /* O resto do seu código do footer */
+    max-width: 800px;
+    margin-top: 40px; 
+    padding: 25px;
+    background-color: var(--bg-color-dark);
+    border-radius: 8px;
+    z-index: 2;
+    
+    /* Como o pai (.journey-container) já está a centrar
+       com align-items: center, não precisamos de margin: auto aqui */
+}
+.journey-footer p {
+    color: #eee;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+.journey-footer p strong {
+    color: var(--text-color-inverted);
+    font-weight: bold;
 }
