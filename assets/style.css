@@ -205,15 +205,74 @@ body {
     background-color: var(--bg-color-dark); 
 }
 
-/* O Card Principal (18x7) */
+/* =========================================
+   SEÇÃO 3: O QUE É A GFS ACADEMY
+   ========================================= */
+
+/* ... o .parent.section-about continua igual ... */
+
+/* O Card Principal (18x7) - AGORA É UM GRID ANINHADO */
 .about-container {
     grid-column: 2 / 9;
     grid-row: 2 / 20;
-    border: 2px dashed var(--color-primary);
-    min-height: 500px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #aaa;
+
+    /* Transformando em Grid Aninhado */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
+    grid-template-rows: auto auto auto; /* 3 linhas: topo, banner, 8ps */
+    gap: 30px; /* Espaço entre as áreas */
+    
+    /* Definindo as áreas do layout */
+    grid-template-areas:
+        "texto-sobre   imagens-sobre"
+        "banner-metodo banner-metodo"
+        "detalhes-8ps  detalhes-8ps";
+    
+/* Cor de fundo para o card se destacar do fundo preto do body */
+    background-color: #111; /* Mesmo tom da seção anterior para consistência */
+    
+    /* Borda sutil para definir o card */
+    border: 1px solid rgba(248, 194, 0, 0.3); /* Borda amarela sutil */
+    
+    /* Arredondamento dos cantos */
+    border-radius: 10px;
+    
+    /* Espaçamento interno (MUITO IMPORTANTE) */
+    padding: 40px; 
+
+}
+
+/* --- Áreas Reservadas (Placeholders) --- */
+/* Adicionamos estilos temporários para vermos os espaços */
+
+.about-text {
+    grid-area: texto-sobre;
+    border: 2px dashed #555;
+    padding: 20px;
+    min-height: 200px;
+    color: #888;
+}
+
+.about-images {
+    grid-area: imagens-sobre;
+    border: 2px dashed #555;
+    padding: 20px;
+    min-height: 200px;
+    color: #888;
+}
+
+.method-banner {
+    grid-area: banner-metodo;
+    border: 2px dashed var(--color-primary); /* Amarelo, pois o banner é amarelo */
+    padding: 20px;
+    min-height: 80px;
+    color: #888;
+}
+
+.method-details {
+    grid-area: detalhes-8ps;
+    border: 2px dashed #555;
+    padding: 20px;
+    min-height: 300px;
+    color: #888;
 }
