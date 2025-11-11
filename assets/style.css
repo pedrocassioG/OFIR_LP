@@ -54,7 +54,7 @@ body {
   grid-row: 2 / 3;
   align-self: end;
   color: var(--text-color-inverted);
-  font-size: 3.5rem; 
+  font-size: 3.82rem; 
   line-height: 1.2;
   font-weight: bold;
 }
