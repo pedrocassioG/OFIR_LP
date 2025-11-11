@@ -232,7 +232,7 @@ body {
     background-color: #111; /* Mesmo tom da seção anterior para consistência */
     
     /* Borda sutil para definir o card */
-    border: 1px solid rgba(248, 194, 0, 0.3); /* Borda amarela sutil */
+    border: 1px solid var(--color-primary); /* Borda amarela sutil */
     
     /* Arredondamento dos cantos */
     border-radius: 10px;
@@ -365,8 +365,57 @@ body {
 
 .method-details {
     grid-area: detalhes-8ps;
-    border: 2px dashed #555;
-    padding: 20px;
-    min-height: 300px;
-    color: #888;
+    
+    /* Remove placeholders */
+    border: none;
+    min-height: auto;
+    color: inherit;
+    padding: 0;
+
+    /* Novo Grid (3 colunas) */
+    display: grid;
+    /* Coluna Esquerda (1fr) | Imagem (auto) | Coluna Direita (1fr) */
+    grid-template-columns: 1fr auto 1fr;
+    gap: 25px; /* Espaçamento entre as colunas de texto e a imagem */
+    align-items: center; /* Alinha verticalmente a imagem e as colunas de texto */
+}
+
+/* Colunas de Texto (Esquerda e Direita) */
+.method-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaço vertical entre cada item (Posicionamento, Performance, etc.) */
+}
+
+/* --- Para editar APENAS a Coluna Esquerda --- */
+.method-column-left {
+    text-align: right;
+}
+
+/* --- Para editar APENAS a Coluna Direita --- */
+.method-column-right {
+    text-align: left;
+}
+
+/* Item de Texto individual */
+.method-item h4 {
+    color: var(--text-color-inverted); /* Título branco/claro */
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.method-item p {
+    color: #ccc; /* Descrição cinza claro */
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Imagem Central */
+.method-center-image img {
+    display: block;
+    width: 100%;
+    max-width: 450px; /* Ajuste este valor para controlar o tamanho máximo do gráfico */
+    height: auto;
+    margin: 0 auto;
 }
