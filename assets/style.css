@@ -850,3 +850,28 @@ body {
     font-size: 0.9rem;
 
 }
+
+.parent.section-deliverables {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(17, auto);
+    gap: var(--grid-gap-main);
+    width: 100%;
+    padding: 80px 20px; 
+    background-color: var(--bg-color-dark); 
+}
+
+
+.deliverables-container {
+    grid-column: 2 / 9;
+    grid-row: 2 / 17;
+    background-color: #1a1a1a; 
+    border: 1px solid var(--color-primary);
+    border-radius: 10px;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #aaa;
+}
