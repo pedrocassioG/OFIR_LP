@@ -992,8 +992,64 @@ body {
 }
 
 .deliverables-bonus {
-    border: 2px dashed #555;
-    min-height: 400px;
+    border: none;
+    min-height: auto;
+    padding: 0;
+    color: inherit;
+
+    /* Empilha (Imagem, Título, Grid de Cards) verticalmente */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaço entre os 3 blocos */
+}
+
+/* 1. Imagem do Dashboard */
+.bonus-dashboard-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Garante que a imagem se comporte bem */
+}
+
+/* 2. Título (Reutiliza a classe da esquerda, mas removemos a borda inferior) */
+.deliverables-bonus .list-main-title {
+    border-bottom: none; /* Remove a linha amarela */
+    padding-bottom: 0;
+    margin-bottom: 0; /* Ajusta a margem */
+}
+
+/* 3. Grid 2x2 dos Cards Bônus */
+.bonus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
+    gap: 15px; /* Espaço entre os cards pequenos */
+}
+
+/* Estilo de cada Card Bônus (baseado na imagem) */
+.bonus-card {
+    background-color: #2a2a2a; /* Fundo cinza escuro sutil */
+    border: 1px solid var(--color-primary); /* Borda amarela */
+    border-radius: 8px;
     padding: 20px;
-    color: #888;
+}
+
+.bonus-emoji {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.bonus-card h4 {
+    /* O texto principal do card bônus é branco */
+    color: var(--text-color-inverted); 
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.bonus-card p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
 }
