@@ -921,11 +921,7 @@ body {
 /* O grid que divide a área 4:3 */
 .deliverables-content-grid {
     display: grid;
-    
-    /* A proporção 4:3 que você pediu */
     grid-template-columns: 4fr 3fr; 
-    
-    /* Espaço entre as duas colunas */
     gap: 40px; 
 }
 
@@ -938,13 +934,15 @@ body {
 
 /* Título da Coluna (Ex: "Entregáveis Estratégicos") */
 .list-main-title {
-    font-size: 1.8rem;
+    font-size: 3rem;
     font-weight: bold;
     margin-bottom: 30px;
     padding-bottom: 15px;
+    padding-top: 60px;
     border-bottom: 2px solid var(--color-primary);
     color: var(--bg-color-main);
     display: inline-block; 
+
 }
 
 /* A Lista de Entregáveis */
@@ -953,31 +951,17 @@ body {
     padding-left: 0;
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espaço vertical entre cada item da lista */
+    gap: 60px; /* Espaço vertical entre cada item da lista */
 }
 
 .deliverables-ul li {
     position: relative;
-    padding-left: 30px; /* Espaço para o "traço" amarelo */
+    padding-left: 50px; /* Espaço para o "traço" amarelo */
 }
 
-/* O "traço" amarelo customizado (como na imagem) */
-.deliverables-ul li::before {
-    content: ''; /* Vazio, pois vamos desenhar o traço */
-    position: absolute;
-    left: 0;
-    /* Alinha verticalmente com o título */
-    top: 10px; /* Ajuste este valor (ex: 8px) para alinhar perfeitamente */
-    
-    width: 18px; /* Largura do traço */
-    height: 3px; /* Espessura do traço */
-    background-color: var(--color-primary); /* Cor amarela */
-}
-
-/* Título do Sub-tópico (Amarelo) */
 .deliverables-ul .highlight-text {
     color: var(--color-primary);
-    font-size: 1.25rem;
+    font-size: 2.5rem;
     font-weight: bold;
     display: block; /* Garante que o <p> vá para a linha de baixo */
     margin-bottom: 8px; /* Espaço entre o título e a descrição */
@@ -986,7 +970,8 @@ body {
 /* Descrição do Sub-tópico (Cinza) */
 .deliverables-ul p {
     color: #ccc;
-    font-size: 0.95rem;
+    font-size: 1.6rem;
+    padding-right: 70px;
     line-height: 1.6;
     margin: 0; /* Remove a margem padrão do parágrafo */
 }
