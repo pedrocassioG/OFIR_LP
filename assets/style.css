@@ -1046,3 +1046,39 @@ body {
     line-height: 1.5;
     margin: 0;
 }
+
+.parent.section-guarantee {
+    display: grid;
+    /* 9 Colunas */
+    grid-template-columns: repeat(9, 1fr);
+    /* 10 Linhas */
+    grid-template-rows: repeat(10, auto);
+    gap: var(--grid-gap-main);
+    
+    width: 100%;
+    padding: 80px 20px; 
+    
+    background-color: var(--bg-color-dark); 
+}
+
+/* O Contêiner de Conteúdo (8x7) */
+.guarantee-container {
+    /* "1 de respiro" = 7 colunas (2 até 9) */
+    grid-column: 2 / 9;
+    
+    /* "1 de respiro" = 8 linhas (começa na 2, termina na 10) */
+    grid-row: 2 / 10;
+
+    /* Apenas para visualização (baseado na imagem) */
+    background-color: #1a1a1a; /* Fundo escuro do card */
+    /* Borda amarela mais grossa, como na imagem */
+    border: 3px solid var(--color-primary); 
+    border-radius: 10px;
+    
+    min-height: 500px; /* Altura mínima para vermos o espaço */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #aaa;
+}
