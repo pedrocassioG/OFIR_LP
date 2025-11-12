@@ -929,12 +929,66 @@ body {
     gap: 40px; 
 }
 
-/* Placeholders temporários para ver as colunas */
 .deliverables-list {
-    border: 2px dashed #555;
-    min-height: 400px;
-    padding: 20px;
-    color: #888;
+    border: none;
+    min-height: auto;
+    padding: 0;
+    color: inherit;
+}
+
+/* Título da Coluna (Ex: "Entregáveis Estratégicos") */
+.list-main-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--bg-color-main);
+    display: inline-block; 
+}
+
+/* A Lista de Entregáveis */
+.deliverables-ul {
+    list-style-type: none; /* Remove os bullets padrão */
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaço vertical entre cada item da lista */
+}
+
+.deliverables-ul li {
+    position: relative;
+    padding-left: 30px; /* Espaço para o "traço" amarelo */
+}
+
+/* O "traço" amarelo customizado (como na imagem) */
+.deliverables-ul li::before {
+    content: ''; /* Vazio, pois vamos desenhar o traço */
+    position: absolute;
+    left: 0;
+    /* Alinha verticalmente com o título */
+    top: 10px; /* Ajuste este valor (ex: 8px) para alinhar perfeitamente */
+    
+    width: 18px; /* Largura do traço */
+    height: 3px; /* Espessura do traço */
+    background-color: var(--color-primary); /* Cor amarela */
+}
+
+/* Título do Sub-tópico (Amarelo) */
+.deliverables-ul .highlight-text {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: block; /* Garante que o <p> vá para a linha de baixo */
+    margin-bottom: 8px; /* Espaço entre o título e a descrição */
+}
+
+/* Descrição do Sub-tópico (Cinza) */
+.deliverables-ul p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0; /* Remove a margem padrão do parágrafo */
 }
 
 .deliverables-bonus {
