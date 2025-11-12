@@ -880,10 +880,8 @@ body {
     /* Posição (continua o mesmo) */
     grid-column: 2 / 9;
     grid-row: 2 / 17;
-
-    /* Estilos do Card (continua o mesmo) */
     background-color: #1a1a1a;
-    border: 1px solid #555;
+    border: 1px solid var(--color-primary);
     border-radius: 10px;
     
     /* Limpa placeholders */
@@ -902,7 +900,7 @@ body {
     gap: 20px; /* Espaço entre o logo e o título */
     margin-bottom: 40px; /* Espaço abaixo do cabeçalho, antes do próximo conteúdo */
     padding-bottom: 30px; /* Espaço extra e linha abaixo */
-    border-bottom: 1px solid #444; /* Linha divisória sutil */
+    border-bottom: 1px solid var(--color-primary); /* Linha divisória sutil */
 }
 
 .deliverables-logo {
@@ -981,8 +979,6 @@ body {
     min-height: auto;
     padding: 0;
     color: inherit;
-
-    /* Empilha (Imagem, Título, Grid de Cards) verticalmente */
     display: flex;
     flex-direction: column;
     gap: 25px; /* Espaço entre os 3 blocos */
@@ -996,7 +992,25 @@ body {
     object-fit: cover; /* Garante que a imagem se comporte bem */
 }
 
-/* 2. Título (Reutiliza a classe da esquerda, mas removemos a borda inferior) */
+/* Título da Coluna Direita (Bônus) */
+.bonus-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-primary);
+    background-image: linear-gradient(
+        -45deg,
+        var(--color-primary),
+        var(--text-color-inverted)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; 
+}
+
 .deliverables-bonus .list-main-title {
     border-bottom: none; /* Remove a linha amarela */
     padding-bottom: 0;
@@ -1006,7 +1020,7 @@ body {
 /* 3. Grid 2x2 dos Cards Bônus */
 .bonus-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
+    grid-template-columns: 1fr; /* 2 colunas iguais */
     gap: 15px; /* Espaço entre os cards pequenos */
 }
 
@@ -1018,23 +1032,17 @@ body {
     padding: 20px;
 }
 
-.bonus-emoji {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 10px;
-}
-
 .bonus-card h4 {
     /* O texto principal do card bônus é branco */
     color: var(--text-color-inverted); 
-    font-size: 1.1rem;
+    font-size: 2rem;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
 .bonus-card p {
     color: #ccc;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin: 0;
 }
