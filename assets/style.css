@@ -1061,24 +1061,67 @@ body {
     background-color: var(--bg-color-dark); 
 }
 
-/* O Contêiner de Conteúdo (8x7) */
 .guarantee-container {
-    /* "1 de respiro" = 7 colunas (2 até 9) */
     grid-column: 2 / 9;
-    
-    /* "1 de respiro" = 8 linhas (começa na 2, termina na 10) */
     grid-row: 2 / 10;
-
-    /* Apenas para visualização (baseado na imagem) */
-    background-color: #1a1a1a; /* Fundo escuro do card */
-    /* Borda amarela mais grossa, como na imagem */
+    background-color: #1a1a1a;
     border: 3px solid var(--color-primary); 
     border-radius: 10px;
-    
-    min-height: 500px; /* Altura mínima para vermos o espaço */
+    min-height: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #aaa;
+    flex-direction: column; 
+    gap: 25px;
+    color: inherit;
+    padding: 50px;
+}
+
+/* Título 1 (Branco) */
+.guarantee-title-white {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: left;
+    color: var(--text-color-inverted); /* Reutiliza a classe 'strong-white' */
+}
+
+.guarantee-title-gradient {
+    background-image: linear-gradient(
+        to right, 
+        var(--color-primary),  /* Amarelo */
+        var(--text-color-inverted), /* Branco */
+        var(--color-primary)   /* Amarelo */
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent; 
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.guarantee-text {
+    color: #ccc;
+    font-size: 2rem; /* Um pouco maior para leitura */
+    text-align: left; /* Texto centralizado como na imagem */
+}
+
+/* --- Destaques Especiais (Parágrafo 2) --- */
+
+/* (fundo amarelo e letra preta) */
+.highlight-bg-yellow {
+    background-color: var(--color-primary);
+    color: var(--text-color-primary); /* Preto/escuro */
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* (borda amarela) */
+.highlight-border-yellow {
+    border: 1px solid var(--color-primary);
+    color: var(--text-color-inverted); /* Texto branco */
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
