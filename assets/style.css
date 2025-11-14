@@ -210,12 +210,19 @@ body {
     margin-bottom: 20px;
 }
 
-.section-description, .problems-footer p {
-    color: #ccc;
-    font-size: 1.89rem;
-    text-align: justify;
-}
+.problems-footer {
 
+    text-align: left;
+    font-size: 3rem;
+}
+.problems-footer p {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0 0 10px 0; /* Adiciona um pequeno espaço entre os dois parágrafos */
+}
+.problems-footer p:last-child {
+    font-size: 1.8rem
+}
 .problems-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
