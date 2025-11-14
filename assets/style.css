@@ -102,6 +102,59 @@ body {
   color: var(--text-color-primary);
 
 }
+.botao_seta {
+    background-image: linear-gradient(125deg, var(--bg-color-main), var(--color-primary));
+    color: var(--color-primary-dark);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.botao_seta:hover {
+    filter: brightness(1.1);
+}
+
+/* Ícone dentro do botão */
+.btn__icon-wrapper {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    background-color: #FFFFFF;
+    color: var(--color-primary-dark);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+/* Se não tivesse isso, as SVG não animariam */
+.btn__icon-svg {
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+}
+
+/* Ícone duplicado para o efeito */
+.btn__icon-svg--copy {
+    transform: translate(-150%, 150%);
+}
+
+/* Animação ao passar o mouse */
+.botao_seta:hover .btn__icon-svg:first-child {
+    transform: translate(150%, -150%);
+}
+
+.botao_seta:hover .btn__icon-svg--copy {
+    transform: translate(0);
+    transition-delay: 0.05s;
+}
+
+
 
 .btn-primary:hover {
   filter: brightness(0.9);
@@ -112,6 +165,8 @@ body {
 .btn-secondary {
   background-color: var(--bg-color-dark);
   border: 2px solid var(--color-primary);
+      padding: 12px 20px;
+    border-radius: 10px;
   color: var(--color-primary);
 
 }
