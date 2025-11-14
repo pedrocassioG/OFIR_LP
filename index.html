@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ofir - Transforme Seu Negócio de Alimentação</title>
+    <title>Ofir - Transforme Seu Negócio de Alimentação</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
@@ -651,108 +656,55 @@
             O Que Você Recebe com a GFS Academy?
           </h2>
         </div>
-        <div class="deliverables-content-grid">
-          <div class="deliverables-list">
-            <ul class="deliverables-ul">
-              <li>
-                <h3 class="list-main-title strong-white">
-                  Entregáveis Estratégicos
-                </h3>
-              </li>
-              <li>
-                <h4 class="highlight-text">Diagnóstico Estratégico 360°</h4>
-                <p>
-                  Análise profunda de posicionamento, operação, financeiro e
-                  mercado com plano de ação prioritizado.
-                </p>
-              </li>
-              <li>
-                <h4 class="highlight-text">Identidade Visual Profissional</h4>
-                <p>
-                  Logo, paleta de cores, tipografia e manual de marca completo
-                  para uso consistente.
-                </p>
-              </li>
-              <li>
-                <h4 class="highlight-text">Biblioteca de Conteúdo</h4>
-                <p>
-                  50+ assets visuais profissionais (fotos, vídeos, artes)
-                  prontos para campanhas.
-                </p>
-              </li>
-              <li>
-                <h4 class="highlight-text">Funis de Vendas Automatizados</h4>
-                <p>
-                  Sistema completo de captura, nutrição e conversão operando
-                  24/7.
-                </p>
-              </li>
-              <li>
-                <h4 class="highlight-text">Gestão Contínua de Tráfego</h4>
-                <p>
-                  Campanhas multicanal otimizadas mensalmente com foco em ROI
-                  positivo.
-                </p>
-              </li>
-              <li>
-                <h4 class="highlight-text">Dashboards em Tempo Real</h4>
-                <p>
-                  Acesso completo a todas métricas de performance, investimento
-                  e retorno.
-                </p>
-              </li>
-              <li>
-                <h4 class="highlight-text">Reuniões Estratégicas Mensais</h4>
-                <p>
-                  Alinhamento de resultados, planejamento tático e definição de
-                  próximos passos.
-                </p>
-              </li>
-            </ul>
-          </div>
-          <div class="deliverables-bonus">
-            <img
-              src="assets/img/dashboard.png"
-              alt="Dashboard de Bônus"
-              class="bonus-dashboard-image"
-            />
 
-            <h3 class="bonus-heading">Bônus Exclusivos</h3>
+        <div
+          class="deliverables-carousel-wrapper"
+        >
+          <div class="swiper-button-prev"></div>
 
-            <div class="bonus-grid">
-              <div class="bonus-card">
-                <h4>Framework de Precificação Estratégica</h4>
-                <p>
-                  Planilha avançada para calcular margem de contribuição real e
-                  definir preços que maximizam lucro sem perder competitividade.
-                </p>
+          <div class="swiper deliverables-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="assets/img/diagnostico_.png"
+                  alt="Slide Diagnóstico Estratégico"
+                />
               </div>
 
-              <div class="bonus-card">
-                <h4>Modelo de Projeção Financeira</h4>
-                <p>
-                  Template personalizado para simular cenários de crescimento,
-                  expansão e ROI de investimentos em marketing.
-                </p>
+              <div class="swiper-slide">
+                <img
+                  src="assets/img/Biblioteca.png"
+                  alt="Biblioteca"
+                />
               </div>
 
-              <div class="bonus-card">
-                <h4>Acesso ao Portal de Treinamentos</h4>
-                <p>
-                  Conteúdos exclusivos sobre gestão de food business, marketing
-                  avançado e estratégias de escala.
-                </p>
+              <div class="swiper-slide">
+                <img
+                  src="assets/img/Funil de Vendas.png"
+                  alt="Funil de vendas"
+                />
               </div>
-
-              <div class="bonus-card">
-                <h4>Rede de Networking Exclusiva</h4>
-                <p>
-                  Conexão com outros empresários do setor em eventos trimestrais
-                  e grupo privado de troca de experiências.
-                </p>
+                            <div class="swiper-slide">
+                <img
+                  src="assets/img/Gestão de Tráfego.png"
+                  alt="Gestão de Tráfego"
+                />
+              </div>
+                            <div class="swiper-slide">
+                <img
+                  src="assets/img/Identidade Visual.png"
+                  alt="Identidade Visual"
+                />
+              </div>
+                            <div class="swiper-slide">
+                <img
+                  src="assets/img/Reunião_.png"
+                  alt="Reunião_"
+                />
               </div>
             </div>
           </div>
+          <div class="swiper-button-next"></div>
         </div>
       </div>
     </section>
@@ -838,9 +790,24 @@
         </p>
       </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+      const swiper = new Swiper('.deliverables-swiper', {
+        // Configuração
+        loop: true, // Faz o carrossel voltar ao início
+        
+        // Botões de Navegação
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 3000, // 3000 milissegundos = 3 segundos
+          disableOnInteraction: false, // Continua a girar mesmo depois do usuário mexer
+        },
+      });
     </script>
   </body>
 </html>
