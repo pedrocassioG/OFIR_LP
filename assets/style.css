@@ -1242,99 +1242,119 @@ body {
 }
 /* (As classes .strong-white e .highlight-text que já temos 
    cuidarão dos destaques amarelos e brancos) */
+/* =========================================
+   SEÇÃO 9: AGENDAR SESSÃO (NOVO DESIGN)
+   ========================================= */
+
+/* =========================================
+   SEÇÃO 9: AGENDAR SESSÃO (Alinhado à Esquerda)
+   ========================================= */
+
 .parent.section-cta {
     display: grid;
-    /* 9 Colunas */
     grid-template-columns: repeat(9, 1fr);
-    /* 11 Linhas */
-    grid-template-rows: repeat(11, auto);
+    grid-template-rows: auto;
     gap: var(--grid-gap-main);
-    
     width: 100%;
-    padding: 80px 20px; 
-    
-    background-color: var(--bg-color-dark); 
+    padding: 80px 20px;
+    background-color: var(--bg-color-dark);
 }
 
-/* O Contêiner de Conteúdo (9x7) */
+/* O Contêiner Principal */
+/* O Contêiner Principal */
 .cta-container {
-    /* Posição */
-    grid-column: 2 / 9;
-    grid-row: 2 / 11;
-
-    /* Estilos do Card */
-    background-color: #1a1a1a;
-    border: 1px solid var(--color-primary);
-    border-radius: 10px;
-    min-height: auto;
-    color: inherit;
+    grid-column: 2 / 9; /* Correto: Posição (começa na 2) */
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    padding: 60px 40px;
-    gap: 25px;
-}
-
-.cta-title {
-    font-size: 7rem;
-    font-weight: bold;
+    align-items: flex-start;
     text-align: left;
-    color: var(--text-color-inverted); 
+    gap: 30px;
+
 }
 
-.cta-title .highlight-text {
-    color: var(--color-primary);
-}
-
-.cta-intro {
-    font-size: 3rem;
+/* Título Principal */
+.cta-main-title {
     color: var(--text-color-inverted);
+    font-size: 7.5rem;
     font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left; /* Garante o alinhamento à esquerda */
+    text-transform: uppercase;
+}
+
+/* Título Secundário (Subtitle) */
+.cta-subtitle {
+    color: var(--text-color-inverted);
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Itens da Lista (Cards Retangulares) */
+.cta-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.cta-list-item {
+    background-color: #1a1a1a;
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 18px 25px;
     text-align: left;
 }
-
-.cta-list {
-    list-style-type: none;
-    padding-left: 0;
-    max-width: 700px;
-
-}
-.cta-list li {
-    color: #ccc;
-    font-size: 2rem;
-    line-height: 1.6;
-    padding-left: 25px;
-    margin-bottom: 15px;
+.cta-list-item p {
+    color: var(--text-color-inverted);
+    font-size: 2.5rem;
+    line-height: 1;
+    margin: 0;
 }
 
-.cta-list li::before {
-    content: '•';
-    color: var(--color-primary);
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.cta-button-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start; 
-    margin-top: 10px;
-}
+/* Botão CTA */
 .cta-button {
+    font-size: 4rem;
     padding: 18px 35px;
-    font-size: 1.1rem;
-    max-width: 450px;
-    width: 100%;
+    border-radius: 50px;
+    margin-top: 20px;
+    background-color: var(--color-primary);
+    color: var(--text-color-primary);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /* --- MUDANÇA AQUI --- */
+    align-self: flex-start; /* Garante que o botão alinhe à esquerda */
+    /* Removemos o 'width: 100%' para ele ter o tamanho do texto */
+}
+.cta-button:hover {
+    background-color: #ffcc00;
 }
 
+
+/* Aviso Final */
 .cta-disclaimer {
-    color: #aaa;
+    color: #999;
     font-size: 2rem;
     line-height: 1.5;
-    text-align: left;
+    margin-top: 20px;
+    
+    /* --- MUDANÇA AQUI --- */
+    margin-left: 0; /* Remove a centralização */
+    margin-right: 0; /* Remove a centralização */
+}
 
+/* (A classe .gradient-text não muda) */
+.gradient-text {
+    background: linear-gradient(
+        45deg, 
+        var(--color-primary),
+        var(--text-color-inverted) 50%,
+        var(--color-primary)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
